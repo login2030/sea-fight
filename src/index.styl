@@ -1,0 +1,201 @@
+@import 'nib'
+roboto()
+	font-family 'Roboto', sans-serif
+
+min-width = 520px
+color-button = #e57373
+color-header = #1565c0
+color-bd-field = #bbdefb
+color-panding = #26c6da
+color-success = #00e676
+color-cell-hover = #26c6da
+color-error = red
+color-comp-error = #999;
+
+html
+body
+	roboto()
+	min-width min-w
+	font-size 18px
+
+.c-wrapper
+	clearfix()
+	width min-width
+	margin auto
+	padding 25px 0
+	&__header
+		text-align center
+		margin-bottom 15px
+	&__content
+		clearfix()
+	&__c-game
+		&:nth-child(1)
+			float left
+		&:nth-child(2)
+			float right
+.c-game
+	&__header
+		background-color color-header
+		padding 10px 0
+		text-align center
+		font-size 14px
+		color #FFF
+		text-transform uppercase
+		border-radius 4px 4px 0 0
+	&__field
+		clearfix()
+		box-sizing border-box
+		width 252px
+		height @width - 1px
+		border-right 1px solid color-bd-field
+		border-bottom @border-right
+		border-left @border-right
+	&__row
+		clearfix()
+	&__cell
+		position relative
+		box-sizing border-box
+		width 25px
+		height @width
+		border .5px solid color-bd-field
+		float left
+		cursor pointer
+		&.is-g
+			&:after
+				content ''
+				position absolute
+				top 50%
+				left 0
+				width 100%
+				height 4px
+				margin-top -2px
+				background-color #333
+			&.is-start
+				&:after
+					left auto
+					right 0
+					width 60%
+					border-radius 2px 0 0 2px
+			&.is-end
+				&:after
+					right auto
+					left 0
+					width 60%
+					border-radius 0 2px 2px 0
+		&.is-v
+			&:after
+				content ''
+				position absolute
+				top 0
+				left 50%
+				width 4px
+				height 100%
+				margin-left -2px
+				background-color #333
+			&.is-start
+				&:after
+					top auto
+					bottom 0
+					height 60%
+					border-radius 2px 2px 0 0
+			&.is-end
+				&:after
+					bottom auto
+					top 0
+					height 60%
+					border-radius 0 0 2px 2px
+		&.is-one
+			&:after
+				width 15px
+				border-radius 2px
+				left 50%
+				margin-left -7px
+	&.is-user
+		& ^[0]
+			&__cell
+				&.is-ship
+					background-color color-cell-hover !important
+				&.is-damage
+					background-color color-error !important
+				&.is-error
+					background-color color-comp-error
+	&.is-computer
+		& ^[0]
+			&__cell
+				&:hover
+					background-color color-cell-hover
+				&.is-ship
+					&:after
+						opacity 0
+				&.is-damage
+					background-color color-cell-hover !important
+					&:after
+						opacity 1
+				&.is-error
+					background-color color-error
+
+.c-btn
+	display inline-block
+	padding 0 40px
+	line-height 40px
+	text-align center
+	margin auto
+	text-transform uppercase
+	background-color color-button
+	border-radius 4px
+	color #FFF
+	cursor pointer
+	&.is-started
+		background-color color-panding
+	&.is-error
+		background-color red
+	&.is-success
+		background-color green
+
+.c-popup
+	display none
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background alpha(#000, .8)
+	z-index 999
+	&__close
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		cursor pointer
+		z-index 1
+	&__content
+		position absolute
+		z-index 2
+		top 10%
+		left 50%
+		margin-left -125px
+		width 250px
+	&__form-item
+		display block
+		box-sizing border-box
+		background #ffffff
+		width 100%
+		height 40px
+		border-radius 4px
+		font-size 18px
+		text-align center
+	&__input
+		border 0
+		padding-left 20px
+		margin-bottom 15px
+		&.is-error
+			background-color #e53935
+			color #FFF
+	&__button
+		border 0
+		background-color color-button
+		color #FFF
+		cursor pointer
+		text-transform uppercase
+	

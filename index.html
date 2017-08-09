@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="build/index.css">
+	<script src="https://cdn.jsdelivr.net/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<script src="build/index.js" type="text/javascript"></script>
+	<title>Sea-fight::Морской бой</title>
+</head>
+<body>
+
+	<div class="c-wrapper">
+		<div class="c-wrapper__header">
+			<div class="c-btn js-start js-msg-game">Начать</div>
+		</div>
+		<div class="c-wrapper__content">
+			<div class="c-wrapper__c-game c-game is-user">
+				<div class="c-game__header js-user-name">Имя пользователя</div>
+				<div class="c-game__field js-battle-field js-battle-field-user"></div>
+			</div>
+			<div class="c-wrapper__c-game c-game is-computer">
+				<div class="c-game__header">Компьютер</div>
+				<div class="c-game__field js-battle-field js-battle-field-computer"></div>
+			</div>
+		</div>
+	</div>
+
+	<form action="#" class="c-popup js-confirm">
+		<div class="c-popup__close js-confirm-close"></div>
+		<div class="c-popup__content">
+			<input type="text" placeholder="Ваше имя" class="c-popup__input c-popup__form-item js-confirm-input">
+			<button class="c-popup__button c-popup__form-item">Играть</button>
+		</div>
+	</form>
+</body>
+</html>
